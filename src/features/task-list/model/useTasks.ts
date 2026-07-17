@@ -1,22 +1,21 @@
-import { useState, useMemo, useCallback } from 'react'
+import { useState, useMemo, useCallback, useEffect } from 'react'
 
-import type { Task } from 'entities/task'
+import { useGetTasksQuery, type Task } from 'entities/task'
 
 export type Filter = 'all' | 'completed' | 'incomplete'
 
-function generateTasks(count: number): Task[] {
-  return Array.from({ length: count }, (_, index) => ({
-    id: String(index + 1),
-    title: `Задача №${index + 1}`,
-    completed: index % 2 === 0,
-  }))
-}
+export function useTasks() {
+  const { data, isSuccess, isLoading, isError } = useGetTasksQuery()
 
-const initialTasks: Task[] = generateTasks(20)
-
-export function useTasks(initial: Task[] = initialTasks) {
-  const [tasks, setTasks] = useState<Task[]>(initial)
+  const [tasks, setTasks] = useState<Task[]>([])
   const [filter, setFilter] = useState<Filter>('all')
+
+  useEffect(() => {
+    if (isSuccess) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setTasks(data)
+    }
+  }, [isSuccess, data])
 
   const filteredTasks = useMemo(() => {
     switch (filter) {
@@ -38,5 +37,7 @@ export function useTasks(initial: Task[] = initialTasks) {
     filter,
     setFilter,
     removeTask,
+    isLoading,
+    isError,
   }
 }
