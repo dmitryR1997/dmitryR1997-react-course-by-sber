@@ -1,3 +1,5 @@
+import { memo } from 'react'
+
 import type { Task } from '../model/types'
 import styles from './TaskCard.module.css'
 
@@ -6,7 +8,7 @@ interface TaskCardProps {
   onRemove?: (id: string) => void
 }
 
-export const TaskCard = ({ task, onRemove }: TaskCardProps) => {
+export const TaskCard = memo(({ task, onRemove }: TaskCardProps) => {
   const handleRemove = () => {
     if (onRemove) {
       onRemove(task.id)
@@ -24,4 +26,6 @@ export const TaskCard = ({ task, onRemove }: TaskCardProps) => {
       </button>
     </div>
   )
-}
+})
+
+TaskCard.displayName = 'TaskCard'

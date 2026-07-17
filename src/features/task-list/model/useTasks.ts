@@ -4,12 +4,15 @@ import type { Task } from 'entities/task'
 
 export type Filter = 'all' | 'completed' | 'incomplete'
 
-const initialTasks: Task[] = [
-  { id: '1', title: 'Изучить React', completed: true },
-  { id: '2', title: 'Настроить FSD', completed: false },
-  { id: '3', title: 'Создать компоненты', completed: false },
-  { id: '4', title: 'Написать тесты', completed: false },
-]
+function generateTasks(count: number): Task[] {
+  return Array.from({ length: count }, (_, index) => ({
+    id: String(index + 1),
+    title: `Задача №${index + 1}`,
+    completed: index % 2 === 0,
+  }))
+}
+
+const initialTasks: Task[] = generateTasks(20)
 
 export function useTasks(initial: Task[] = initialTasks) {
   const [tasks, setTasks] = useState<Task[]>(initial)
