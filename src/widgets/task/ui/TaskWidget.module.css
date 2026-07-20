@@ -28,3 +28,11 @@
   padding: 4px 12px;
   border-radius: 12px;
 }
+
+.state {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 24px;
+  text-align: center;
+  color: #666;
+}

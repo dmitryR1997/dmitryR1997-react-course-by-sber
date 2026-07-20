@@ -100,6 +100,22 @@ export default defineConfig([
 
       'import/no-unresolved': 'off',
       'import/no-relative-parent-imports': 'off',
+
+      'import/order': [
+        'error',
+        {
+          groups: ['builtin', 'external', 'internal', ['parent', 'sibling', 'index']],
+          pathGroups: [
+            {
+              pattern: '{app,pages,widgets,features,entities,shared}/**',
+              group: 'internal',
+            },
+          ],
+          pathGroupsExcludedImportTypes: ['builtin'],
+          'newlines-between': 'always',
+          alphabetize: { order: 'asc', caseInsensitive: true },
+        },
+      ],
     },
   },
 ])

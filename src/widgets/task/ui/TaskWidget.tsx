@@ -12,7 +12,15 @@ const filterLabels: Record<Filter, string> = {
 }
 
 export const TaskWidget = () => {
-  const { tasks, filter, setFilter, removeTask } = useTasks()
+  const { tasks, filter, setFilter, removeTask, isLoading, isError } = useTasks()
+
+  if (isLoading) {
+    return <p className={styles.state}>Загрузка задач…</p>
+  }
+
+  if (isError) {
+    return <p className={styles.state}>Не удалось загрузить задачи</p>
+  }
 
   return (
     <div className={styles.taskWidget}>

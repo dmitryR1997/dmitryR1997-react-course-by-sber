@@ -1,7 +1,7 @@
 import { memo } from 'react'
 
-import type { Task } from '../model/types'
 import styles from './TaskCard.module.css'
+import type { Task } from '../model/types'
 
 interface TaskCardProps {
   task: Task
