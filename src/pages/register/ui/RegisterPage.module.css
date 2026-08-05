@@ -1,15 +1,7 @@
-.taskPage {
+.registerPage {
   min-height: 100vh;
   padding: 40px 20px;
   background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-}
-
-.link {
-  display: block;
-  margin-top: 24px;
-  text-align: center;
-  color: #1976d2;
-  font-size: 15px;
 }
 
 .title {
@@ -19,4 +11,12 @@
   margin-bottom: 32px;
   font-weight: 700;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.link {
+  display: block;
+  margin-top: 24px;
+  text-align: center;
+  color: #1976d2;
+  font-size: 15px;
 }
