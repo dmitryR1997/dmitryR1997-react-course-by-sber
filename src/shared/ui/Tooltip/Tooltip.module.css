@@ -1,0 +1,49 @@
+.trigger {
+  display: inline-flex;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 1000;
+  max-width: 240px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font: 400 14px/1.4 system-ui, sans-serif;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-align: left;
+  text-indent: 0;
+  text-transform: none;
+  text-shadow: none;
+  white-space: normal;
+  direction: ltr;
+}
+
+.light {
+  background-color: white;
+  color: #1a237e;
+  border: 1px solid #bbdefb;
+}
+
+.dark {
+  background-color: #1a237e;
+  color: white;
+  border: 1px solid #1a237e;
+}
+
+.top {
+  transform: translate(-50%, -100%);
+}
+
+.bottom {
+  transform: translateX(-50%);
+}
+
+.left {
+  transform: translate(-100%, -50%);
+}
+
+.right {
+  transform: translateY(-50%);
+}

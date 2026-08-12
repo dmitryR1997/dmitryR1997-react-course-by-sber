@@ -15,6 +15,9 @@ export const PublicPage = () => {
       <Link className={styles.link} to={ROUTES.LOGIN}>
         Войти
       </Link>
+      <Link className={styles.link} to={ROUTES.PORTALS}>
+        Порталы
+      </Link>
     </div>
   )
 }
