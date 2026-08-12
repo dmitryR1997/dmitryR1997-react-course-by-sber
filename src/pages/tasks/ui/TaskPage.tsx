@@ -13,6 +13,9 @@ export const TaskPage = () => {
       <Link className={styles.link} to={ROUTES.REGISTER}>
         Регистрация
       </Link>
+      <Link className={styles.link} to={ROUTES.REF_EXAMPLES}>
+        Примеры useRef
+      </Link>
     </div>
   )
 }

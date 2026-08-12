@@ -4,4 +4,5 @@ export const ROUTES = {
   REGISTER: '/register',
   PROFILE: '/profile',
   PUBLIC: '/public',
+  REF_EXAMPLES: '/ref-examples',
 } as const

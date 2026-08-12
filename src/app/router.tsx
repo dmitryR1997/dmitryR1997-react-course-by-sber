@@ -4,6 +4,7 @@ import { ProtectedRoute } from 'features/auth-routing'
 import { LoginPage } from 'pages/login'
 import { ProfilePage } from 'pages/profile'
 import { PublicPage } from 'pages/public'
+import { RefExamplesPage } from 'pages/ref-examples'
 import { RegisterPage } from 'pages/register'
 import { TaskPage } from 'pages/tasks'
 import { ROUTES } from 'shared/config/routes'
@@ -33,5 +34,9 @@ export const router = createBrowserRouter([
         element: <ProfilePage />,
       },
     ],
+  },
+  {
+    path: ROUTES.REF_EXAMPLES,
+    element: <RefExamplesPage />,
   },
 ])
