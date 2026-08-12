@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import { ProtectedRoute } from 'features/auth-routing'
 import { LoginPage } from 'pages/login'
+import { PortalShowcase } from 'pages/portal-showcase'
 import { ProfilePage } from 'pages/profile'
 import { PublicPage } from 'pages/public'
 import { RegisterPage } from 'pages/register'
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
   {
     path: ROUTES.PUBLIC,
     element: <PublicPage />,
+  },
+  {
+    path: ROUTES.PORTALS,
+    element: <PortalShowcase />,
   },
   {
     element: <ProtectedRoute />,
