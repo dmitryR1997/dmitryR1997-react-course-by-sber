@@ -5,4 +5,5 @@ export const ROUTES = {
   PROFILE: '/profile',
   PUBLIC: '/public',
   PORTALS: '/portals',
+  REACT19: '/react19',
 } as const

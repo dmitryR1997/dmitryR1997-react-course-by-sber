@@ -18,6 +18,9 @@ export const PublicPage = () => {
       <Link className={styles.link} to={ROUTES.PORTALS}>
         Порталы
       </Link>
+      <Link className={styles.link} to={ROUTES.REACT19}>
+        React 19
+      </Link>
     </div>
   )
 }
